@@ -1,4 +1,4 @@
-npx eslint --fix --cache --quiet .
+npx eslint --fix --cache .
 sh ./scripts/test.sh
 
 # NOTE: Lint and format further files after tests pass (final checks).
