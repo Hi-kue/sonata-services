@@ -55,6 +55,7 @@ export default antfu({
         "CODE_OF_CONDUCT.md",
         "SECURITY.md",
         "LICENSE.md",
+        "CONSULTANCY.md",
 
         // NOTE: Configuration Files (Add more if needed)
         "eslint.config.js",
