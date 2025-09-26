@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # README
 # *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 # This is a bash script that is currently not
@@ -11,12 +9,16 @@
 # to fit the specific needs and requirements of your
 # project.
 #
-# Current File: build.sh
+# Current File: test.sh
+# Commands: N/A
+# Suplementary Commands: N/A
 # *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../scripts" && pwd)"
 source "$SCRIPT_DIR/logs.sh"
 
 set -e
+
+set -e
 info "This script is not implemented, please implement it as needed."
-exit 1
+exit 0

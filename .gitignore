@@ -1,7 +1,10 @@
+### Test Results ###
 test-results
+
+### Node Modules ###
 node_modules
 
-# Output
+### Build Output ###
 .output
 .vercel
 .netlify
@@ -9,16 +12,16 @@ node_modules
 /.svelte-kit
 /build
 
-# OS
+### OS Files ###
 .DS_Store
 Thumbs.db
 
-# Env
+### Environment Variables ###
 .env
 .env.*
 !.env.example
 !.env.test
 
-# Vite
+### Vite Configuration ###
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*

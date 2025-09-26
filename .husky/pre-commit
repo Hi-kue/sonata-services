@@ -1,0 +1,6 @@
+npx eslint --fix --cache --quiet .
+sh ./scripts/test.sh
+
+# NOTE: Lint and format further files after tests pass (final checks).
+# npx prettier --write .
+# npx eslint --cache --quiet .
