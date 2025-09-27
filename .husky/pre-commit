@@ -1,6 +1,5 @@
 # npm run biome:check
-sh ./scripts/test.shs
-
+sh ./scripts/test.sh
 # NOTE: Lint and format further files after tests pass (final checks).
 # npx prettier --write .
 # npx eslint --cache --quiet .
