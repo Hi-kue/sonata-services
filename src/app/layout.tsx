@@ -1,7 +1,7 @@
-import GradualBlur from "@/components/effects/gradual-blur";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import GradualBlur from "@/components/visuals/gradual-blur";
 import { siteConfig } from "@/lib/config";
 import { cn, constructMetadata } from "@/lib/utils";
 import { GeistMono } from "geist/font/mono";
@@ -42,13 +42,14 @@ export default function RootLayout({
           <ThemeToggle />
           <TailwindIndicator />
         </ThemeProvider>
+
         <GradualBlur
           target="page"
           position="bottom"
           height="6rem"
           strength={2}
           divCount={5}
-          curve="bezier"
+          curve="ease-in-out"
           exponential={true}
           opacity={1}
         />
