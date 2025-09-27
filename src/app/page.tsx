@@ -12,6 +12,7 @@ import { Statistics } from "@/components/sections/statistics";
 import { Testimonials } from "@/components/sections/testimonials";
 import { UseCases } from "@/components/sections/use-cases";
 
+
 export default function Home() {
   return (
     <main>
@@ -28,6 +29,6 @@ export default function Home() {
       <Blog />
       <CTA />
       <Footer />
-    </main>
+    </main >
   );
 }
