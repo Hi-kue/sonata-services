@@ -1,45 +1,45 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
-	"json": {
-		"formatter": {
-			"enabled": true,
-			"trailingCommas": "all",
-			"lineWidth": 100,
-			"indentStyle": "space",
-			"indentWidth": 4,
-			"lineEnding": "lf",
-			"bracketSpacing": true,
-			"expand": "auto"
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"enabled": true,
-			"arrowParentheses": "always",
-			"bracketSpacing": true,
-			"indentWidth": 2,
-			"indentStyle": "space",
-			"semicolons": "always",
-			"lineWidth": 100,
-			"quoteStyle": "double",
-			"trailingCommas": "all",
-			"lineEnding": "lf",
-			"expand": "auto",
-			"jsxQuoteStyle": "double"
-		}
-	},
-	"formatter": {
-		"enabled": true,
-		"lineEnding": "lf",
-		"indentStyle": "space",
-		"indentWidth": 2
-	},
-	"linter": {
-		"domains": {
-			"next": "all"
-		},
-		"rules": {
-			"recommended": true
-		}
-	}
+    "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+    "json": {
+        "formatter": {
+            "enabled": true,
+            "trailingCommas": "all",
+            "lineWidth": 100,
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "lineEnding": "lf",
+            "bracketSpacing": true,
+            "expand": "auto"
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "enabled": true,
+            "arrowParentheses": "always",
+            "bracketSpacing": true,
+            "indentWidth": 2,
+            "indentStyle": "space",
+            "semicolons": "always",
+            "lineWidth": 100,
+            "quoteStyle": "double",
+            "trailingCommas": "all",
+            "lineEnding": "lf",
+            "expand": "auto",
+            "jsxQuoteStyle": "double"
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "lineEnding": "lf",
+        "indentStyle": "space",
+        "indentWidth": 2
+    },
+    "linter": {
+        "domains": {
+            "next": "all"
+        },
+        "rules": {
+            "recommended": true
+        }
+    }
 }

@@ -1,24 +1,19 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Author from "@/components/blog-author";
 import { CTA } from "@/components/sections/cta";
 import { getPost } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { formatDate } from "@/lib/utils";
-import type { Metadata } from "next";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata | undefined> {
   const params = await props.params;
-  let post = await getPost(params.slug);
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
+  const post = await getPost(params.slug);
+  const { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
 
   return {
     title,
@@ -79,9 +74,7 @@ export default async function Page(props: {
       />
       <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6 lg:px-8 space-y-4 my-12">
         <Suspense
-          fallback={
-            <div className="mb-8 w-full h-64 bg-muted animate-pulse rounded-lg"></div>
-          }
+          fallback={<div className="mb-8 w-full h-64 bg-muted animate-pulse rounded-lg"></div>}
         >
           {post.metadata.image && (
             <div className="mb-8">
@@ -96,9 +89,7 @@ export default async function Page(props: {
           )}
         </Suspense>
         <div className="flex flex-col">
-          <h1 className="title font-medium text-3xl tracking-tighter">
-            {post.metadata.title}
-          </h1>
+          <h1 className="title font-medium text-3xl tracking-tighter">{post.metadata.title}</h1>
         </div>
         <div className="flex justify-between items-center text-sm">
           <Suspense fallback={<p className="h-5" />}>

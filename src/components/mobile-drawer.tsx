@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { IoMenuSharp } from "react-icons/io5";
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -11,8 +13,6 @@ import {
 } from "@/components/ui/drawer";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { IoMenuSharp } from "react-icons/io5";
 
 export function MobileDrawer() {
   return (
@@ -22,11 +22,7 @@ export function MobileDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="px-6">
-          <Link
-            href="/"
-            title="brand-logo"
-            className="relative mr-6 flex items-center space-x-2"
-          >
+          <Link href="/" title="brand-logo" className="relative mr-6 flex items-center space-x-2">
             <Icons.logo className="w-auto h-[40px]" />
             <DrawerTitle>{siteConfig.name}</DrawerTitle>
           </Link>
@@ -35,10 +31,7 @@ export function MobileDrawer() {
         <DrawerFooter>
           <Link
             href="#"
-            className={cn(
-              buttonVariants({ variant: "default" }),
-              "text-white rounded-full group"
-            )}
+            className={cn(buttonVariants({ variant: "default" }), "text-white rounded-full group")}
           >
             {siteConfig.cta}
           </Link>

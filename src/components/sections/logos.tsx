@@ -1,18 +1,11 @@
 "use client";
 
-import { Section } from "@/components/section";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Section } from "@/components/section";
 
-const companies = [
-  "Google",
-  "Microsoft",
-  "Amazon",
-  "Netflix",
-  "YouTube",
-  "Instagram",
-];
+const companies = ["Google", "Microsoft", "Amazon", "Netflix", "YouTube", "Instagram"];
 
 const companies2 = ["Spotify", "Dropbox", "Tinder", "Slack", "Zoom", "Shopify"];
 

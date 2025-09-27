@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { Section } from "@/components/section";
 import { BorderText } from "@/components/ui/border-number";
-import Link from "next/link";
 
 const stats = [
   {
@@ -60,9 +60,7 @@ export function Statistics() {
                 <BorderText text={stat.title} />
                 <div className="flex items-center justify-center gap-2 mt-2">
                   {stat.icon}
-                  <p className="text-sm text-muted-foreground">
-                    {stat.subtitle}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{stat.subtitle}</p>
                 </div>
               </div>
             </Link>

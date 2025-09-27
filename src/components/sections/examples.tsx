@@ -1,6 +1,6 @@
+import { codeToHtml } from "shiki";
 import { FeatureSelector } from "@/components/feature-selector";
 import { Section } from "@/components/section";
-import { codeToHtml } from "shiki";
 
 interface FeatureOption {
   id: number;
@@ -46,8 +46,7 @@ run();`,
   {
     id: 2,
     title: "Multi-Agent Collaboration",
-    description:
-      "Set up multiple AI agents to work together on a complex task.",
+    description: "Set up multiple AI agents to work together on a complex task.",
     code: `import { Agent, MultiAgentSystem } from 'ai-agent-sdk';
 
 const researchAgent = new Agent('Researcher');
@@ -129,8 +128,7 @@ performResearch('AI advancements in 2023');`,
   {
     id: 4,
     title: "Customizable Agent Behavior",
-    description:
-      "Design a specialized AI agent with custom decision-making logic.",
+    description: "Design a specialized AI agent with custom decision-making logic.",
     code: `import { Agent, KnowledgeBase } from 'ai-agent-sdk';
 
 class CustomerSupportAgent extends Agent {
@@ -194,7 +192,7 @@ export async function Examples() {
         lang: "typescript",
         theme: "github-dark",
       }),
-    }))
+    })),
   );
 
   return (

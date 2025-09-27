@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 interface FeatureOption {
   id: number;
@@ -13,9 +14,7 @@ interface FeatureSelectorProps {
   features: FeatureOption[];
 }
 
-export const FeatureSelector: React.FC<FeatureSelectorProps> = ({
-  features,
-}) => {
+export const FeatureSelector: React.FC<FeatureSelectorProps> = ({ features }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   return (
@@ -31,9 +30,7 @@ export const FeatureSelector: React.FC<FeatureSelectorProps> = ({
               }`}
             >
               <h3 className="font-medium tracking-tight">{option.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {option.description}
-              </p>
+              <p className="text-sm text-muted-foreground">{option.description}</p>
             </button>
           ))}
         </div>

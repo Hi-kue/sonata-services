@@ -1,7 +1,5 @@
 "use client";
 
-import { Section } from "@/components/section";
-import OrbitingCircles from "@/components/ui/orbiting-circles";
 import { cubicBezier, motion } from "framer-motion";
 import {
   AlertTriangleIcon,
@@ -16,6 +14,8 @@ import {
   UserSearch,
   XCircleIcon,
 } from "lucide-react";
+import { Section } from "@/components/section";
+import OrbitingCircles from "@/components/ui/orbiting-circles";
 
 const containerVariants = {
   initial: {},
@@ -123,9 +123,7 @@ export function Card1() {
               <div className="flex flex-col gap-y-2">
                 <div className="h-2 w-32 rounded-full bg-neutral-800/50 dark:bg-neutral-200/80"></div>
                 <div className="h-2 w-48 rounded-full bg-slate-400/50"></div>
-                <div className="text-xs text-neutral-500">
-                  Google Search API integration
-                </div>
+                <div className="text-xs text-neutral-500">Google Search API integration</div>
               </div>
             </motion.div>
             <motion.div
@@ -139,9 +137,7 @@ export function Card1() {
                 <div className="h-2 w-32 rounded-full bg-neutral-800/50 dark:bg-neutral-200/80"></div>
                 <div className="h-2 w-48 rounded-full bg-slate-400/50"></div>
                 <div className="h-2 w-20 rounded-full bg-slate-400/50"></div>
-                <div className="text-xs text-neutral-500">
-                  PostgreSQL database connection
-                </div>
+                <div className="text-xs text-neutral-500">PostgreSQL database connection</div>
               </div>
             </motion.div>
             <motion.div
@@ -156,17 +152,13 @@ export function Card1() {
                 <div className="h-2 w-48 rounded-full bg-slate-400/50"></div>
                 <div className="h-2 w-20 rounded-full bg-slate-400/50"></div>
                 <div className="h-2 w-48 rounded-full bg-slate-400/50"></div>
-                <div className="text-xs text-neutral-500">
-                  OpenAI GPT-3.5 API integration
-                </div>
+                <div className="text-xs text-neutral-500">OpenAI GPT-3.5 API integration</div>
               </div>
             </motion.div>
           </div>
         </div>
         <div className="flex flex-col gap-y-1 px-5 pb-4 items-start w-full">
-          <h2 className="font-semibold tracking-tight text-lg">
-            Tool Integration
-          </h2>
+          <h2 className="font-semibold tracking-tight text-lg">Tool Integration</h2>
           <p className="text-sm text-muted-foreground">
             Seamlessly integrate external APIs and tools into agent workflows.
           </p>
@@ -289,12 +281,9 @@ const Card2 = () => {
           </motion.div>
         </div>
         <div className="flex flex-col gap-y-1 px-5 pb-4 items-start w-full">
-          <h2 className="font-semibold tracking-tight text-lg">
-            Monitor agent activity
-          </h2>
+          <h2 className="font-semibold tracking-tight text-lg">Monitor agent activity</h2>
           <p className="text-sm text-muted-foreground">
-            Track and analyze your AI agent performance with detailed activity
-            logs.
+            Track and analyze your AI agent performance with detailed activity logs.
           </p>
         </div>
       </motion.div>
@@ -337,9 +326,7 @@ const Card3 = () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-1 px-5 pb-4 items-start w-full">
-          <h2 className="font-semibold tracking-tight text-lg">
-            Build once, run anywhere
-          </h2>
+          <h2 className="font-semibold tracking-tight text-lg">Build once, run anywhere</h2>
           <p className="text-sm text-muted-foreground">
             Create AI agents that work seamlessly across different platforms.
           </p>

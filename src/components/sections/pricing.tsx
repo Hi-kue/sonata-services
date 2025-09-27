@@ -1,14 +1,14 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { useState } from "react";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-import { useState } from "react";
 
 interface TabsProps {
   activeTab: string;
@@ -30,12 +30,7 @@ interface TabsTriggerProps {
 
 const Tabs = ({ activeTab, setActiveTab, className, children }: TabsProps) => {
   return (
-    <div
-      className={cn(
-        "mx-auto flex w-full items-center justify-center",
-        className
-      )}
-    >
+    <div className={cn("mx-auto flex w-full items-center justify-center", className)}>
       {children(activeTab)}
     </div>
   );
@@ -43,23 +38,13 @@ const Tabs = ({ activeTab, setActiveTab, className, children }: TabsProps) => {
 
 const TabsList = ({ children }: TabsListProps) => {
   return (
-    <div className="relative flex w-fit items-center rounded-full border p-1.5">
-      {children}
-    </div>
+    <div className="relative flex w-fit items-center rounded-full border p-1.5">{children}</div>
   );
 };
 
-const TabsTrigger = ({
-  value,
-  onClick,
-  children,
-  isActive,
-}: TabsTriggerProps) => {
+const TabsTrigger = ({ value, onClick, children, isActive }: TabsTriggerProps) => {
   return (
-    <button
-      onClick={onClick}
-      className={cn("relative z-[1] px-4 py-2", { "z-0": isActive })}
-    >
+    <button onClick={onClick} className={cn("relative z-[1] px-4 py-2", { "z-0": isActive })}>
       {isActive && (
         <motion.div
           layoutId="active-tab"
@@ -76,7 +61,7 @@ const TabsTrigger = ({
       <span
         className={cn(
           "relative block text-sm font-medium duration-200",
-          isActive ? "delay-100 text-primary" : ""
+          isActive ? "delay-100 text-primary" : "",
         )}
       >
         {children}
@@ -96,15 +81,13 @@ function PricingTier({
     <div
       className={cn(
         "outline-focus transition-transform-background relative z-10 box-border grid h-full w-full overflow-hidden text-foreground motion-reduce:transition-none lg:border-r border-t last:border-r-0",
-        tier.popular ? "bg-primary/5" : "text-foreground"
+        tier.popular ? "bg-primary/5" : "text-foreground",
       )}
     >
       <div className="flex flex-col h-full">
         <CardHeader className="border-b p-4 grid grid-rows-2 h-fit">
           <CardTitle className="flex items-center justify-between">
-            <span className="text-sm font-medium text-muted-foreground">
-              {tier.name}
-            </span>
+            <span className="text-sm font-medium text-muted-foreground">{tier.name}</span>
             {tier.popular && (
               <Badge
                 variant="secondary"
@@ -134,9 +117,7 @@ function PricingTier({
               </span>
             </motion.div>
           </div>
-          <p className="text-[15px] font-medium text-muted-foreground">
-            {tier.description}
-          </p>
+          <p className="text-[15px] font-medium text-muted-foreground">{tier.description}</p>
         </CardHeader>
 
         <CardContent className="flex-grow p-4 pt-5">
@@ -156,7 +137,7 @@ function PricingTier({
             "w-full rounded-none shadow-none",
             tier.popular
               ? "bg-primary text-primary-foreground hover:bg-secondary-foreground"
-              : "bg-muted text-foreground hover:bg-muted/80"
+              : "bg-muted text-foreground hover:bg-muted/80",
           )}
         >
           {tier.cta}
@@ -167,9 +148,7 @@ function PricingTier({
 }
 
 export function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    "yearly"
-  );
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("yearly");
 
   const handleTabChange = (tab: "yearly" | "monthly") => {
     setBillingCycle(tab);
@@ -185,9 +164,8 @@ export function Pricing() {
             </h2>
 
             <p className="mt-6 text-balance text-muted-foreground">
-              Choose an <strong>affordable plan</strong> that&apos;s packed with
-              the best features for engaging your audience, creating customer
-              loyalty, and driving sales.
+              Choose an <strong>affordable plan</strong> that&apos;s packed with the best features
+              for engaging your audience, creating customer loyalty, and driving sales.
             </p>
           </div>
           <Tabs
@@ -206,9 +184,7 @@ export function Pricing() {
                   >
                     {tab.charAt(0).toUpperCase() + tab.slice(1)}
                     {tab === "yearly" && (
-                      <span className="ml-2 text-xs font-semibold text-green-500">
-                        Save 25%
-                      </span>
+                      <span className="ml-2 text-xs font-semibold text-green-500">Save 25%</span>
                     )}
                   </TabsTrigger>
                 ))}

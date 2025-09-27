@@ -1,4 +1,3 @@
-import { siteConfig } from "@/lib/config";
 import fs from "fs";
 import path from "path";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -7,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
+import { siteConfig } from "@/lib/config";
 
 export type Post = {
   title: string;
@@ -18,15 +18,15 @@ export type Post = {
 };
 
 function parseFrontmatter(fileContent: string) {
-  let frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
-  let match = frontmatterRegex.exec(fileContent);
-  let frontMatterBlock = match![1];
-  let content = fileContent.replace(frontmatterRegex, "").trim();
-  let frontMatterLines = frontMatterBlock.trim().split("\n");
-  let metadata: Partial<Post> = {};
+  const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
+  const match = frontmatterRegex.exec(fileContent);
+  const frontMatterBlock = match![1];
+  const content = fileContent.replace(frontmatterRegex, "").trim();
+  const frontMatterLines = frontMatterBlock.trim().split("\n");
+  const metadata: Partial<Post> = {};
 
   frontMatterLines.forEach((line) => {
-    let [key, ...valueArr] = line.split(": ");
+    const [key, ...valueArr] = line.split(": ");
     let value = valueArr.join(": ").trim();
     value = value.replace(/^['"](.*)['"]$/, "$1"); // Remove quotes
     metadata[key.trim() as keyof Post] = value;
@@ -63,9 +63,7 @@ export async function getPost(slug: string) {
   const source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = parseFrontmatter(source);
   const content = await markdownToHTML(rawContent);
-  const defaultImage = `${siteConfig.url}/og?title=${encodeURIComponent(
-    metadata.title
-  )}`;
+  const defaultImage = `${siteConfig.url}/og?title=${encodeURIComponent(metadata.title)}`;
   return {
     source: content,
     metadata: {
@@ -87,7 +85,7 @@ async function getAllPosts(dir: string) {
         slug,
         source,
       };
-    })
+    }),
   );
 }
 

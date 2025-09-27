@@ -12,16 +12,14 @@ export default async function Blog() {
   const allPosts = await getBlogPosts();
 
   const articles = await Promise.all(
-    allPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+    allPosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)),
   );
 
   return (
     <>
       <div className="mx-auto w-full max-w-screen-xl px-2.5 lg:px-20 mt-24">
         <div className="text-center py-16">
-          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            Articles
-          </h1>
+          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Articles</h1>
           <p className="mt-4 text-xl text-muted-foreground">
             Latest news and updates from {siteConfig.name}
           </p>

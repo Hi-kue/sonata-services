@@ -1,11 +1,11 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { useState } from "react";
 
 export function Testimonials() {
   const [showAll, setShowAll] = useState(false);
@@ -34,7 +34,7 @@ export function Testimonials() {
               className={cn(
                 "flex flex-col border-b break-inside-avoid border-l",
                 "transition-colors hover:bg-secondary/20",
-                !showAll && index >= initialDisplayCount && "hidden"
+                !showAll && index >= initialDisplayCount && "hidden",
               )}
             >
               <div className="px-4 py-5 sm:p-6 flex-grow">
@@ -47,12 +47,8 @@ export function Testimonials() {
                     />
                   )}
                   <div>
-                    <h3 className="text-lg font-medium text-foreground">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.company}
-                    </p>
+                    <h3 className="text-lg font-medium text-foreground">{testimonial.name}</h3>
+                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                   </div>
                 </div>
                 <p>{testimonial.text}</p>
