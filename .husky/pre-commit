@@ -1,4 +1,4 @@
-npx eslint --fix --cache .
+npm run biome:check
 sh ./scripts/test.sh
 
 # NOTE: Lint and format further files after tests pass (final checks).
